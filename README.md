@@ -14,19 +14,19 @@ XML文件基本格式如下
 row是表示一类配置，其中**key属性**会转化为**ini文件中的Seciton**。
 出来两个两个基础节点，通过以下节点实现配置输入。
 
-文本输入（text）
+1. 文本输入（text）
 
 <text key="DefEncodingNoFound" label_name="文本框"></text>
 
-单选（radio）
+2. 单选（radio）
 ```xml
 <radio key="CacheSitePage" label_name="单选按钮">Y(true)|N(false)</radio>
 ```
-多选框（checkbox）
+3. 多选框（checkbox）
 ```xml
 <checkbox key="DefPageSuffix" label_name="多选框">C1(cb1)|C2(cb2)|C3(cb3)</checkbox>	
 ```
-下拉框（select）
+4. 下拉框（select）
 ```xml
 <select key="NumThread" label_name="下拉框">1|2|4|8|16|32|64</select>
 ```
@@ -140,7 +140,7 @@ text节点的值为空（不用编辑），其他节点如果有多个选项，�
 </root>
 ```
 3.**Ini**(这是ini文件类型)
-```json
+```
 [Request]
 UA=	2.0
 [Coding]
@@ -154,7 +154,7 @@ UseStatic=	true
 NumThread=	4.0
 ```
 4.csv（csv类型）
-```json
+```
 Request,UA,2.0
 Coding,DefEncoding,utf-8,big5
 Coding,DefEncodingNoFound,utf-8
