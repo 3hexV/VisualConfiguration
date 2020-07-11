@@ -11,19 +11,30 @@
 		</row>
 	</windows>
 ```
+
 	其中windos节点是根节点，使用**title**表示输出后**文件的名称**，**height和weight**表示可视化界面的**高度和宽度**。
 	row是表示一类配置，其中**key属性**会转化为**ini文件中的Seciton**。
 	出来两个两个基础节点，通过以下节点实现配置输入。
-	1. 文本输入（text）
+	* 文本输入（text）
+	```xml
 <text key="DefEncodingNoFound" label_name="文本框"></text>
-	2. 单选（radio）
+```
+	* 单选（radio）
+	```xml
 <radio key="CacheSitePage" label_name="单选按钮">Y(true)|N(false)</radio>
-	3. 多选框（checkbox）
-<checkbox key="DefPageSuffix" label_name="多选框">C1(cb1)|C2(cb2)|C3(cb3)</checkbox>
-	4. 下拉框（select）
+```
+	* 多选框（checkbox）
+	```xml
+<checkbox key="DefPageSuffix" label_name="多选框">C1(cb1)|C2(cb2)|C3(cb3)</checkbox>	
+```
+	* 下拉框（select）
+	```xml
 	<select key="NumThread" label_name="下拉框">1|2|4|8|16|32|64</select>
-	**上述，key属性会转化为ini文件中键（Key），你做的配置会保存为对应键（Key）的值（Value），label_name属性是，可视化界面的该项目的输入提示**
-	**text节点的值为空（不用编辑），其他节点如果有多个选项，使用|分割，并且如果选项后带有小括号（英文），则在保存数据时，保存对于的小括号中的值**
+```
+	
+	上述，key属性会转化为ini文件中键（Key），你做的配置会保存为对应键（Key）的值（Value），label_name属性是，可视化界面的该项目的输入提示
+	text节点的值为空（不用编辑），其他节点如果有多个选项，使用|分割，并且如果选项后带有小括号（英文），则在保存数据时，保存对于的小括号中的值
+	
 	例如，给定的demo.xml
 	<?xml version="1.0" encoding="utf-8"?>
 <windows title="演示配置" height="550" widht="500">
@@ -45,14 +56,16 @@
 </windows>
 
 2. 运行程序
+
 	安装，并运行程序。
-	
 3. 输入配置
+
 	**配置中不能含有空、未选选择的属性，否者无法保存。**
-	
 4. 保存并导出
+
 	目前支持导出文件类型（**xml,ini,json**,csv）。
 5. 导出文件示例
+
 	1.**Json**
 ```json
 {
